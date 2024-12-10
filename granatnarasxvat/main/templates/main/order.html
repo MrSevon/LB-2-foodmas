@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div class="order-form-container">
+    <h2 class="form-title">Оформить заказ</h2>
+    <p>Пожалуйста, заполните форму ниже, чтобы заказать ваш букет.</p>
+    <form method="post" class="order-form">
+        {% csrf_token %}
+        
+        
+        
+        
+        
+
+        <div class="form-group">
+            <label for="bouquet_id">ID букета:</label>
+            {{ form.bouquet_id }}
+        </div>
+        <div class="form-group">
+            <label for="customer_name">Ваше имя:</label>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="customer_phone">Номер телефона:</label>
+            {{ form.telephone }}
+        </div>
+        <div class="form-group">
+            <label for="customer_address">Адрес доставки:</label>
+            {{ form.adress }}
+        </div>
+        <div class="form-group">
+            <label for="order_notes">Пожелания к заказу:</label>
+            {{ form.comments }}
+        </div>
+        <span>{{ error }}</span>
+        <button type="submit" class="submit-button">Заказать</button>
+    </form>
+</div>
+{% endblock %}
